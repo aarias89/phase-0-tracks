@@ -2,9 +2,11 @@
 <html>
 <head>
   <title>Table Practice</title>
-  <h2>The Simpsons</h2>
+
 </head>
 <body>
+  <fieldset>
+  <h2>The Simpsons</h2>
   <table border="1">
     <tr>
       <th width="100">Name</th>
@@ -22,8 +24,32 @@
       <td>Bart</td>
       <td>Son</td>
     </tr>
-
   </table>
+  </fieldset>
 
+
+<fieldset>
+  <h2>Release 1</h2>
+  <table border=1>
+    <tr>
+      <th>Column I</th>
+      <th>Column II</th>
+      <th>Column III</th>
+    </tr>
+    <tr>
+      <td colspan="2">Column span 2</td>
+      <td>Text</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><-Blank cell</td>
+      <td rowspan="2">Row span 2</td>
+    </tr>
+    <tr>
+      <td>Text</td>
+      <td>Text</td>
+    </tr>
+  </table>
+</fieldset>
 </body>
 </html>
