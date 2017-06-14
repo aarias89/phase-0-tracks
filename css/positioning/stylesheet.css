@@ -1,0 +1,11 @@
+.body{position: relative;
+      margin-top: 150px;
+      margin-left:200px;  }
+
+.hat{position: absolute;
+     top: 60px;
+     left: 190px; }
+
+.glasses{position: absolute;
+        top: 250px;
+        left: 250px;}
