@@ -1,0 +1,37 @@
+Release 0: Elevator Robot
+
+step1-Determine if door is elevator door
+  -if sign reads elevator and buttons are in proximity of door. Press button
+    -if button provides feedback i.e lights up or makes a sound, wait until doors open and proceed to enter. proceed to step 2.
+    -if button provides no feedback, wait 10 seconds and press again. Do step 10 times until elevator arrives and door open. If nothing happens after the 10th attempt. Elevator is out of order, take the stairs.
+-When inside of elevator look for button panel.
+    -identify button values.
+      -numerical buttons
+        -0-9 will indicate which floor the button will tell elevator to go to, exclude number 911.
+        -L will equal first floor or Lobby
+        -B-1 will equal sub-level 1, B-2 sub-level 2 and so on.
+      -symbols
+        - < > will equal "close door"
+        - > < will equal "open door"
+      -emergency
+        -"call","911","stop",contains the color red.
+      -ignore rest of buttons that do not fall into the categories above.
+    -if door is still open press the < > button or close door button. Wait until door closes.
+-When door is closed, choose desired floor from number pad. Wait until elevator comes to a full stop. If screen above number pad displays desired floor, press > < or open door button, exit.
+    -if desired floor number does not display or elevator stops moving without reaching destination, press call or 911 button until you receive a response and ask for assistance.
+
+Release 2: Find a Real-Life Algorithm.
+
+When I worked in a mental health facility we had a series of steps when admitting new clients that could be translated into an algorithm.
+
+-take information
+  -potential client gave basic information
+    -Chief complaint
+    -demographics
+    -type of program of interest
+    -insurance
+-If client was appropriate, meaning we could provide the recommended level of care of their chief complaint, we opened a file using their demographics.
+  -if client needed higher level or care or was not appropriate for the level of care the facility provided the client was referred out.
+-We made sure the wait time for their desired level of care was not out of the ordinary, if wait time was too long, client would be referred out.
+- if client was appropriate and desired program type was available, we would check insurance coverage and schedule admittance day.
+
