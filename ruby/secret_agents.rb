@@ -2,11 +2,16 @@
 def encrypt(string)
 
   secret=string
+  secret=secret + secret[-1].next
+  secret[0] = ""
+  # secret.delete[0]
+  # puts secret
+  #secret=string
+  #secret.index()
+  puts secret
 
-  puts secret + secret[-1].next
-  #puts indexed values +1
 end
 #
 #
 
-encrypt("zed")
+encrypt("abcd")
