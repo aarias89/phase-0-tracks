@@ -1,3 +1,10 @@
+=begin
+-Ask question if user wants to encrypt  or decrypt
+-set variable and gets.chomp
+-if variable is decrypt it will run decrypt method
+- if variable is encrypt it will run encrypt method
+-print result
+=end
 def encrypt (text)
   current_index=0
   number_letters=text.length
@@ -17,7 +24,7 @@ def encrypt (text)
 
     puts encrypted_string
 end
-encrypt('zed')
+
 
 def decrypt(string)
 
@@ -34,4 +41,18 @@ def decrypt(string)
   end
 
 end
-decrypt("afe")
+
+puts "Would you like to encrypt or decrypt message?"
+method_type=gets.chomp
+  if method_type=="encrypt"
+    puts "Message to be encrypted:"
+    message=gets.chomp
+    puts encrypt(message)
+  elsif method_type=="decrypt"
+    puts "Message to be decrypted:"
+    message=gets.chomp
+    puts decrypt(message)
+  else
+    puts "I don't understand."
+end
+# print decrypt(encrypt("swordfish"))
