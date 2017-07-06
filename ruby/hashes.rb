@@ -50,7 +50,13 @@ answer=gets.chomp
     answer=answer.to_sym
     puts "What is the new value:"
     answer_value=gets.chomp
-    client_info.store(answer,answer_value)
+      if (true if Integer(answer_value) rescue false)
+        answer_value=answer_value.to_i
+        client_info.store(answer,answer_value)
+      else
+        client_info.store(answer,answer_value)
+      end
+
     puts "Thank you, your changes have been saved.\n\n"
   end
 
