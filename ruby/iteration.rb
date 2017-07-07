@@ -6,16 +6,17 @@
 # greetings {puts "this is outside the method"}
 # -Array- .each .map!
 # -hash - .each
+#Release 1
+favorite_food=["pizza","tacos","cookies","ice cream","sushi"]
 
-# favorite_food=["pizza","tacos","cookies","ice cream","sushi"]
+states = {
+        New_Jersey:"Trenton",
+        New_York:"Albany",
+        Connecticut:"Hartford",
+        Pennsylvania:"Harrisburg",
+        Delaware:"Dover"
+      }
 
-# states = {
-#         "New_Jersey" => "Trenton",
-#         "New_York" => "Albany",
-#         "Connecticut" => "Hartford",
-#         "Pennsylvania" => "Harrisburg",
-#         "Delaware" => "Dover"
-#       }
 # favorite_food.each  {|x| puts "My favorite food is #{x}."}
 
 # states.each do  |state,capital|
@@ -29,13 +30,32 @@
 
 # p favorite_food
 
-
-# numbers = [2, 4, 6, 8, 10]
-# new_number=[]
-# numbers.map! do |number|
-# puts "#{new_number} does not equal 5 + #{new_number}"
-#    new_number<<number.next
-#  end
-#  p new_number
+#RELEASE 2
+# 1______________________________________________________________________
+puts "RELEASE 2.1\n"
+states.delete_if {|state,capital| state==:Connecticut }
+p states
 
 
+favorite_food.delete_if {|food| food=="cookies"}
+p favorite_food
+#2_______________________________________________________________________
+puts "RELEASE 2.2\n"
+states.keep_if{|state,capital| state==:New_York}
+p states
+favorite_food.select!{|food|food=="sushi"}
+p favorite_food
+#3_______________________________________________________________________
+puts "RELEASE 2.3\n"
+states.each {|state,capital|
+  if state.length <= 10
+    puts state
+  end
+}
+#4_______________________________________________________________________
+puts "RELEASE 2.4\n"
+favorite_food.each {|food|
+      if food.include?("a")
+        print food + " "
+  end
+   }
