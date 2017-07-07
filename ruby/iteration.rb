@@ -32,15 +32,30 @@ states = {
 
 #RELEASE 2
 # 1______________________________________________________________________
+puts "RELEASE 2.1\n"
 states.delete_if {|state,capital| state==:Connecticut }
 p states
+
 
 favorite_food.delete_if {|food| food=="cookies"}
 p favorite_food
 #2_______________________________________________________________________
+puts "RELEASE 2.2\n"
 states.keep_if{|state,capital| state==:New_York}
-favorite_food.select {|food| food=="sushi"}
+p states
+favorite_food.select!{|food|food=="sushi"}
+p favorite_food
 #3_______________________________________________________________________
-
-
+puts "RELEASE 2.3\n"
+states.each {|state,capital|
+  if state.length <= 10
+    puts state
+  end
+}
 #4_______________________________________________________________________
+puts "RELEASE 2.4\n"
+favorite_food.each {|food|
+      if food.include?("a")
+        print food + " "
+  end
+   }
