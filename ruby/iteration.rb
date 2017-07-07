@@ -6,15 +6,15 @@
 # greetings {puts "this is outside the method"}
 # -Array- .each .map!
 # -hash - .each
-
+#Release 1
 # favorite_food=["pizza","tacos","cookies","ice cream","sushi"]
 
 # states = {
-#         "New_Jersey" => "Trenton",
-#         "New_York" => "Albany",
-#         "Connecticut" => "Hartford",
-#         "Pennsylvania" => "Harrisburg",
-#         "Delaware" => "Dover"
+#         New_Jersey:"Trenton",
+#         New_York:"Albany",
+#         Connecticut:"Hartford",
+#         Pennsylvania:"Harrisburg",
+#         Delaware:"Dover"
 #       }
 # favorite_food.each  {|x| puts "My favorite food is #{x}."}
 
@@ -29,13 +29,12 @@
 
 # p favorite_food
 
+#RELEASE 2
+# 1______________________________________________________________________
 
-# numbers = [2, 4, 6, 8, 10]
-# new_number=[]
-# numbers.map! do |number|
-# puts "#{new_number} does not equal 5 + #{new_number}"
-#    new_number<<number.next
-#  end
-#  p new_number
+#2_______________________________________________________________________
+
+#3_______________________________________________________________________
 
 
+#4_______________________________________________________________________
