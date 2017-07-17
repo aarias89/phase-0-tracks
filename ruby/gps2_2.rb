@@ -61,3 +61,24 @@ def cart_print(grocery_cart)
   end
 end
 cart_print(grocery_cart)
+
+=begin
+  What did you learn about pseudocode from working on this challenge?
+  - the way pseudocode is structured makes a huge difference when actually writing code. In the pseudocode,ask the right questions to help guide you to the right answers.
+
+What are the tradeoffs of using arrays and hashes for this challeng
+  -I decided to use arrays because i knew it would be easier to work with key value pairs when iterating through the contents.
+
+What does a method return?
+- a method returns the data that has been run through the block of code that is within the method.
+
+What kind of things can you pass into methods as arguments?
+strings,integers,booleans.
+
+How can you pass information between methods?
+store the information as a variable outside of the method to be used by another method.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+the importance to pseudocoding, im still not 100% solid with the scopes of a method.
+
+=end
