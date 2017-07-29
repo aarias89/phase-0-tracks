@@ -1,0 +1,144 @@
+1-Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM vehicles;
+1|Honda|Accord|true|1
+2|Honda|Civic|true|1
+3|Honda|Element|false|1
+4|Honda|Odyssey|false|1
+5|Honda|S2000|true|1
+6|Honda|CBR 500R|true|2
+7|Honda|CB1100 EX|true|2
+8|Honda|Interceptor|true|2
+9|BMW|C650 Sport|true|2
+10|BMW|K 1600 B|true|2
+11|BMW|S 1000 R|true|2
+12|BMW|318|true|1
+13|BMW|428|true|1
+14|BMW|Gran Tourer|false|1
+######################################################
+
+2-Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE vehicles SET fun="false" WHERE model="318";
+sqlite> SELECT * FROM vehicles;
+1|Honda|Accord|true|1
+2|Honda|Civic|true|1
+3|Honda|Element|false|1
+4|Honda|Odyssey|false|1
+5|Honda|S2000|true|1
+6|Honda|CBR 500R|true|2
+7|Honda|CB1100 EX|true|2
+8|Honda|Interceptor|true|2
+9|BMW|C650 Sport|true|2
+10|BMW|K 1600 B|true|2
+11|BMW|S 1000 R|true|2
+12|BMW|318|false|1
+13|BMW|428|true|1
+14|BMW|Gran Tourer|false|1
+
+######################################################
+
+3-Display the information in both tables using one query.
+
+sqlite> SELECT * from vehicle_type JOIN vehicles on vehicle_type.id = vehicles.type;
+
+1|Automobile|1|Honda|Accord|true|1
+1|Automobile|2|Honda|Civic|true|1
+1|Automobile|3|Honda|Element|false|1
+1|Automobile|4|Honda|Odyssey|false|1
+1|Automobile|5|Honda|S2000|true|1
+2|Motorcycle|6|Honda|CBR 500R|true|2
+2|Motorcycle|7|Honda|CB1100 EX|true|2
+2|Motorcycle|8|Honda|Interceptor|true|2
+2|Motorcycle|9|BMW|C650 Sport|true|2
+2|Motorcycle|10|BMW|K 1600 B|true|2
+2|Motorcycle|11|BMW|S 1000 R|true|2
+1|Automobile|12|BMW|318|false|1
+1|Automobile|13|BMW|428|true|1
+1|Automobile|14|BMW|Gran Tourer|false|1
+
+######################################################
+
+4-Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT vehicles.make,vehicles.model,vehicle_type.vehicle_type
+   ...> from vehicles
+   ...> JOIN vehicle_type
+   ...> on vehicles.type = vehicle_type.id ;
+
+Honda|Accord|Automobile
+Honda|Civic|Automobile
+Honda|Element|Automobile
+Honda|Odyssey|Automobile
+Honda|S2000|Automobile
+Honda|CBR 500R|Motorcycle
+Honda|CB1100 EX|Motorcycle
+Honda|Interceptor|Motorcycle
+BMW|C650 Sport|Motorcycle
+BMW|K 1600 B|Motorcycle
+BMW|S 1000 R|Motorcycle
+BMW|318|Automobile
+BMW|428|Automobile
+BMW|Gran Tourer|Automobile
+
+######################################################
+
+5-Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM vehicles WHERE fun="false";
+sqlite> SELECT * FROM vehicles;
+1|Honda|Accord|true|1
+2|Honda|Civic|true|1
+5|Honda|S2000|true|1
+6|Honda|CBR 500R|true|2
+7|Honda|CB1100 EX|true|2
+8|Honda|Interceptor|true|2
+9|BMW|C650 Sport|true|2
+10|BMW|K 1600 B|true|2
+11|BMW|S 1000 R|true|2
+13|BMW|428|true|1
+
+######################################################
+######################################################
+RELEASE 3
+
+JOINS
+https://www.tutorialspoint.com/sqlite/sqlite_using_joins.htm
+
+-types of major joins (CROSS,INNER,OUTER)
+-CROSS JOIN- matches rows from first table to second table, the result will be a table with the number of rows from multiplying the number of rows from table a and table b.
+
+-INNER JOIN---joining table based on a criteria, it creates an overlap on the data where the criteria matches, joining the data together.
+
+SELECT *
+from vehicles
+JOIN vehicle_type
+on vehicles.type= vehicle_type.id;
+
+1|Honda|Accord|true|1|1|Automobile
+2|Honda|Civic|true|1|1|Automobile
+5|Honda|S2000|true|1|1|Automobile
+6|Honda|CBR 500R|true|2|2|Motorcycle
+7|Honda|CB1100 EX|true|2|2|Motorcycle
+8|Honda|Interceptor|true|2|2|Motorcycle
+9|BMW|C650 Sport|true|2|2|Motorcycle
+10|BMW|K 1600 B|true|2|2|Motorcycle
+11|BMW|S 1000 R|true|2|2|Motorcycle
+13|BMW|428|true|1|1|Automobile
+
+-OUTER JOIN---
+
+SELECT *
+from vehicles
+LEFT JOIN vehicle_type
+on vehicles.type= vehicle_type.vehicle_type;
+1|Honda|Accord|true|1||
+2|Honda|Civic|true|1||
+5|Honda|S2000|true|1||
+6|Honda|CBR 500R|true|2||
+7|Honda|CB1100 EX|true|2||
+8|Honda|Interceptor|true|2||
+9|BMW|C650 Sport|true|2||
+10|BMW|K 1600 B|true|2||
+11|BMW|S 1000 R|true|2||
+13|BMW|428|true|1||
