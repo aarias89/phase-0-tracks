@@ -1,0 +1,38 @@
+Question 2
+SELECT * FROM reviews
+   LEFT JOIN businesses ON businesses.id = reviews.business_id
+    LEFT JOIN users ON users.id = reviews.user_id;
+ OUTPUT:
+
+1|5|Great Food|5|1|5|Plumbing by Janet|1|Bradford|Pitt
+2|4|Short wait|3|4|3|The Beagel Nightclub|4|Steven|Wonder
+3|3|Pricey for Quality|2|2|2|Amir's Towing|2|Mandy|Kailing
+
+
+
+-----------------------------------------------
+Question 3
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews
+   LEFT JOIN businesses ON businesses.id = reviews.business_id
+   LEFT JOIN users ON users.id = reviews.user_id;
+
+OUTPUT:
+Bradford|Pitt|Plumbing by Janet|5|Great Food
+Steven|Wonder|The Beagel Nightclub|4|Short wait
+Mandy|Kailing|Amir's Towing|3|Pricey for Quality
+
+
+-----------------------------------------------
+Question 4
+How do you view the data of all three tables for just one particular business?
+Add a WHERE condition to the query
+
+SELECT * FROM businesses
+   LEFT JOIN reviews ON businesses.id = reviews.business_id
+   LEFT JOIN users ON users.id = reviews.user_id
+   WHERE businesses.id = 2;
+
+OUTPUT:
+
+2|Amir's Towing|3|3|Pricey for Quality|2|2|2|Mandy|Kailing
