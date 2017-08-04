@@ -17,6 +17,15 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/campuses/new' do
+  erb :new
+end
+
+post '/campuses' do
+  db.execute("INSERT INTO campuses (city_name) VALUES (?)", params['city_name'])
+  # redirect '/new'
+ end
+
 # create new students via
 # a form
 post '/students' do
