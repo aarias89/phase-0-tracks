@@ -1,0 +1,23 @@
+h1{color:blue;
+  letter-spacing: 3px;
+  text-align: center;}
+
+.banner{border-style: solid;
+  padding: 20px 20px;
+  margin-bottom: 50px;
+  background-color:#3280CE;
+  font-style: italic;}
+
+button{
+  font-size: 16px;
+  border-radius: 12px;
+  float: center;
+  margin-left: 20%;
+     }
+
+img {position:relative;
+  height: auto;
+  width: 30%;
+  border:3px inset;
+  margin:auto;
+  display: none;}
